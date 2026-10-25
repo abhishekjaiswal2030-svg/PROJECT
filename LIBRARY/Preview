@@ -1,0 +1,102 @@
+📚 Online Bookstore Database Management System – SQL Project
+This project is based on an Online Bookstore database system where data is stored, managed and analyzed using SQL & MySQL. In this version I grew the dataset to 1,000 customers and 1,000 orders and added Payment Method and Platform details, so the analysis has a lot more to show.
+The project includes: 
+✔️ Database schema design
+✔️ CSV dataset import
+✔️ Table relationships using Primary & Foreign Keys
+✔️ Data analysis queries
+✔️ Sales & inventory insights
+✔️ Payment method & platform analysis (new)
+📁 Dataset Files
+The project uses three CSV files:
+•	Books.csv – 500 books (Book_ID 1 to 500)
+•	Customers.csv – 1,000 customers (Customer_ID 1 to 1,000)
+•	Orders.csv – 1,000 orders (Order_ID 1 to 1,000), from 09 Dec 2022 to 07 Dec 2024
+📝 Quick note: customers 501–1,000 and orders 501–1,000 are simulated records I added to grow the data, and Payment_Method & Platform were assigned randomly. So this is practice data, not real sales.
+🗄 Database Tables
+🟦 Books Table
+Stores book-related data such as: Book_ID, Title, Author, Genre, Published_Year, Price, Stock
+🟩 Customers Table
+Stores customer details: Customer_ID, Name, Email, Phone, City, Country, Payment_Method, Platform
+🟨 Orders Table
+Stores transaction records: Order_ID, Customer_ID, Book_ID, Order_Date, Quantity, Total_Amount
+💳 New Columns in Customers Table
+•	Payment_Method → Online, Offline, Cash, Card
+•	Platform → Amazon, Flipkart, Meesho, Myntra, Ajio
+🔗 Table Relationships (Keys)
+•	Book_ID → Links Books & Orders
+•	Customer_ID → Links Customers & Orders
+✔️ Ensures referential integrity
+✔️ Avoids duplicate & inconsistent data
+✔️ All 1,000 orders point to a valid customer and book
+🛠 SQL Operations Performed
+✔️ Table creation with constraints
+✔️ Data import using CSV (with date conversion)
+✔️ SELECT, WHERE, ORDER BY
+✔️ Aggregate functions
+✔️ GROUP BY & HAVING
+✔️ INNER JOIN / LEFT JOIN
+✔️ Subqueries & window functions
+✔️ Business case queries
+🧮 Basic SQL Queries Covered
+1️⃣ Retrieve all books in a specific genre
+2️⃣ Find books published after a given year
+3️⃣ List customers from a specific country
+4️⃣ Show orders in a particular month
+5️⃣ Retrieve total stock of books
+6️⃣ Find most expensive book
+7️⃣ Show customers who ordered > 1 quantity
+8️⃣ Retrieve orders where amount exceeds $20
+9️⃣ List all genres available in Books table
+🔟 Find book with lowest stock
+1️⃣1️⃣ Calculate total revenue from all orders
+🚀 Advanced SQL Queries
+✔️ Total books sold per genre
+✔️ Average book price by genre
+✔️ Customers who placed 2+ orders
+✔️ Most frequently ordered book
+✔️ Top 3 most expensive books (Fantasy)
+✔️ Total quantity sold by each author
+✔️ Cities with customers spending > $30
+✔️ Customer who spent the most
+✔️ Remaining stock after all orders
+💸 Payment Method & Platform Analysis (New)
+Five questions I answered using the new columns:
+1️⃣ Customers and revenue for each payment method
+2️⃣ Which platform gets the most orders & units, and its share of revenue
+3️⃣ Average order value for each platform + payment method combo (top 3)
+4️⃣ Best-selling genre on each platform
+5️⃣ Platform revenue growth from 2023 to 2024
+Quick results:
+✔️ Payment methods by revenue: Cash $41,673.45 (27.4%), Offline $39,480.75 (25.9%), Online $37,490.61 (24.6%), Card $33,635.00 (22.1%)
+✔️ Platforms by revenue: Amazon $33,571.43, Myntra $32,412.70, Meesho $29,682.64, Flipkart $29,224.58, Ajio $27,388.46
+✔️ Amazon is the top platform with 214 orders and 1,197 units (22.0% of revenue)
+✔️ Highest average order value: Flipkart + Cash at $176.89
+✔️ Top genre per platform: Amazon – Science Fiction (232 units); Flipkart – Mystery (186 units); Meesho – Fantasy (225 units); Myntra – Science Fiction (209 units); Ajio – Romance (192 units)
+✔️ 2023 → 2024 growth: Ajio +24.0%, Myntra +7.5%, Amazon -5.7%, Meesho -10.5%, Flipkart -27.6%
+💡 Since Payment_Method and Platform were assigned randomly, the gaps between them are small and just random variation, so don't read them as real customer behaviour. 2024 data runs only till 7 Dec.
+📊 Quick Insights
+✔️ Total revenue is $152,279.81 from 1,000 orders and 5,413 units (about $152.28 per order)
+✔️ Romance earns the most revenue ($25,397.65); Science Fiction sells the most units (897)
+✔️ Best sellers: "Visionary optimizing project" and "Cloned impactful solution" with 42 units each
+✔️ Top customer is Kim Turner (Customer_ID 457) who spent $1,398.90
+✔️ 807 of 1,000 customers placed orders, and 139 of them ordered 2+ times
+✔️ Stock left: 25,056 units in total, with 5 books out of stock
+🧩 How to Run This Project
+1.	Create a database in MySQL
+2.	Run the table creation script (Books, Customers, Orders)
+3.	Import Books.csv, Customers.csv, Orders.csv (in this order, so the foreign keys work)
+4.	Convert Order_Date while importing, since the CSV has dd-mm-yyyy: STR_TO_DATE(Order_Date, '%d-%m-%Y')
+5.	Execute Queries for analysis
+This project was executed using MySQL Workbench & MySQL.
+🧰 Tech Stack
+•	MySQL
+•	MySQL Workbench
+•	SQL
+•	CSV datasets
+👤 Developed By
+ABHISHEK JAISWAL
+🎯 Data Analyst
+📍 Lucknow, India
+📧 abhishekjaiswal2030@gmail.com
+🔗 LinkedIn: linkedin.com/in/abhishek-jaiswal-data-analyst
